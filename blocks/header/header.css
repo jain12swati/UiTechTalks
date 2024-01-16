@@ -1,9 +1,9 @@
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
-  width: 100%;
-  z-index: 2;
-  position: fixed;
+  display: flex;
+  justify-content: center;
+
 }
 
 header nav {
@@ -38,6 +38,7 @@ header nav[aria-expanded="true"] {
 
 @media (width >= 900px) {
   header nav {
+    
     display: flex;
     justify-content: space-between;
   }
@@ -55,6 +56,11 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+}
+
+header nav a:hover{
+  color : var(--header-hover-color);
+  text-decoration: none;
 }
 
 /* hamburger */
@@ -175,7 +181,10 @@ header nav .nav-sections ul  {
 }
 
 header nav .nav-sections ul > li {
+  color: var(--header-text-color);
+  font-size: 14px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -233,7 +242,7 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
