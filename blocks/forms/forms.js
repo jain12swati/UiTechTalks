@@ -37,16 +37,22 @@ function constructPayload(form) {
 
 async function submitForm(form) {
     const payload = constructPayload(form);
+    console.log("payload is", payload);
     payload.timestamp = new Date().toJSON();
-    const resp = await fetch(form.dataset.action, {
-        method: 'POST',
-        cache: 'no-cache',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ data: payload }),
-    });
-    await resp.text();
+    if(form.dataset.action){
+        const resp = await fetch(form.dataset.action, {
+            method: 'POST',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ data: payload }),
+        });
+        console.log("mytext", resp);
+        const responseText = await resp.text();
+        console.log("res", responseText);
+    }
+   console.log("payload after call", payload)
     return payload;
 }
 
@@ -58,12 +64,16 @@ function createButton(fd) {
         button.addEventListener('click', async (event) => {
             const form = button.closest('form');
             if (fd.Placeholder) form.dataset.action = fd.Placeholder;
+            console.log("fd", fd.Placeholder);
             if (form.checkValidity()) {
                 event.preventDefault();
                 button.setAttribute('disabled', '');
                 await submitForm(form);
                 const redirectTo = fd.Extra;
-                window.location.href = redirectTo;
+                if(redirectTo){
+                    window.location.href = redirectTo;
+                }
+             //   window.location.href = redirectTo;
             }
         });
     }
