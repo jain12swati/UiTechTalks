@@ -2,23 +2,30 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-top: 1rem;
   
 }
 
 .blog-container{
-    max-width: 70%;
+    width: 70%;
+    margin-right: 25px;
+   
 }
 
-.sidebar{
-    max-width: 30%;
+
+.left-sidebar{
+    width: 30%;
+    background-color: #ffffff;
 }
 
 .latestblog-list{
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .bloglist-item .blog-card{
-    background-color: aliceblue;
+    background-color:#ffffff;
     border-radius: 5px;
     border: none;
     margin: 0 0 25px;

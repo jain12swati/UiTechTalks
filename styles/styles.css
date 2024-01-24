@@ -125,7 +125,7 @@ pre {
 
 main {
   width: 80%;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   border-radius: 5px;
   margin: 1rem auto;
 }
@@ -204,15 +204,15 @@ main img {
 }
 
 /* sections */
-main .section {
+/* main .section {
   padding: 64px 16px;
-}
+} */
 
-@media (width >= 600px) {
+/* @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 64px 1px;
   }
-}
+} */
 
 @media (width >= 900px) {
   .section > div {
