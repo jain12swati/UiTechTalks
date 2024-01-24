@@ -15,7 +15,16 @@
 
 .left-sidebar{
     width: 30%;
+  
+}
+
+.left-sidebar table{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
     background-color: #ffffff;
+    border-radius: 5px;
+    border: none;
 }
 
 .latestblog-list{
