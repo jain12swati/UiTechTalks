@@ -11,28 +11,11 @@
     margin-right: 25px;
    
 }
-
-
-.left-sidebar{
-    width: 30%;
-  
-}
-
-.left-sidebar table{
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: none;
-}
-
 .latestblog-list{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
 .bloglist-item .blog-card{
     background-color:#ffffff;
     border-radius: 5px;
@@ -77,4 +60,54 @@ font-style: normal;
     font-size: 15px;
     color: #111111;
     line-height: 1.6;
+}
+
+/* sidebar starts here */
+.left-sidebar{
+    width: 30%;
+  
+}
+
+.left-sidebar table{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: none;
+}
+
+.left-sidebar table h3{
+    margin-top: 0;
+    font-size: 18px;
+    color: #111111;
+    font-weight:700;
+}
+
+.left-sidebar .table-4 ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+display: flex;
+flex-wrap: wrap;
+}
+
+.left-sidebar .table-4 ul li a{
+   border: 1px solid var(--btn-color);
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    margin: 0px 5px 5px 0;
+    font-size: 14px;
+    width: fit-content;
+   padding: 0 14px;
+   color: var(--btn-color);
+    border-radius: 4px;
+}
+
+.left-sidebar .table-4 ul li a:hover{
+   background-color: var(--header-hover-color);
+   color: var(--light-color);
+   text-decoration: none;
 }

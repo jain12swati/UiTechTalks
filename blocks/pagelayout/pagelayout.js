@@ -2,20 +2,26 @@ export default async function decorate(block) {
     const columns = block.querySelector("div > div");
     columns.classList.add("blog-page");
     const [contentBlock, sidebar] = columns.querySelectorAll("div");
-    console.log("columns :: ", contentBlock, sidebar);
+   // console.log("columns :: ", contentBlock, sidebar);
     contentBlock.classList.add("blog-container");
     sidebar.classList.add("left-sidebar");   
 
-    const blogUrl = contentBlock.querySelector("a").href;
-    console.log("a", blogUrl)
+    
+    const sidebarContent =  sidebar.querySelectorAll("table");
+    console.log("sidebar", sidebarContent);
+    sidebarContent.forEach((sidebarEl, idy)=>
+    {
+        sidebarEl.classList.add(`table-${idy+1}`);
+    })
+  
+    const blogUrl = contentBlock.querySelector("a").href;   
     const ul = document.createElement('ul');
     try {
       const response = await fetch(blogUrl);
       const { data = [] } = await response.json();
       ul.classList.add("latestblog-list");
-  // console.log("data", data)
-      data.forEach((el, idx) => {
-          // console.log("el", el)
+  
+      data.forEach((el, idx) => {         
         const li = document.createElement('li');
         li.classList.add("bloglist-item")
         li.innerHTML = `<div class="blog-card">
