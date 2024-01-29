@@ -1,6 +1,6 @@
 // import { addInViewAnimationToSingleElement } from '../../utils/helpers.js';
 import { loadScript } from '../../scripts/aem.js';
-
+let classicEditor = null;
 function createSelect(fd) {
     const select = document.createElement('select');
     select.id = fd.Field;
@@ -32,6 +32,9 @@ function constructPayload(form) {
             payload[fe.id] = fe.value;
         }
     });
+
+    payload.blogdetails = classicEditor?.getData() || "";
+    console.log("paload in form", payload);
     return payload;
 }
 
@@ -39,20 +42,19 @@ async function submitForm(form) {
     const payload = constructPayload(form);
     console.log("payload is", payload);
     payload.timestamp = new Date().toJSON();
-    if(form.dataset.action){
-        const resp = await fetch(form.dataset.action, {
-            method: 'POST',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ data: payload }),
-        });
-        console.log("mytext", resp);
-        const responseText = await resp.text();
-        console.log("res", responseText);
-    }
-   console.log("payload after call", payload)
+    const resp = await fetch(form.dataset.action, {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: payload }),
+    });
+    console.log("mytext", resp);
+    
+    let desc = classicEditor.getData();
+    console.log("editor value", desc);
+    await resp.text();
     return payload;
 }
 
@@ -64,16 +66,12 @@ function createButton(fd) {
         button.addEventListener('click', async (event) => {
             const form = button.closest('form');
             if (fd.Placeholder) form.dataset.action = fd.Placeholder;
-            console.log("fd", fd.Placeholder);
             if (form.checkValidity()) {
                 event.preventDefault();
-                button.setAttribute('disabled', '');
+               // button.setAttribute('disabled', '');
                 await submitForm(form);
-                const redirectTo = fd.Extra;
-                if(redirectTo){
-                    window.location.href = redirectTo;
-                }
-             //   window.location.href = redirectTo;
+               /*  const redirectTo = fd.Extra;
+                window.location.href = redirectTo; */
             }
         });
     }
@@ -98,9 +96,9 @@ function createInput(fd) {
 }
 
  function createTextArea(fd) {
-    const input = document.createElement('div');
+    const input = document.createElement('textarea');
     input.classList.add("editor");
-     input.setAttribute('id', "abc");
+    input.setAttribute('id', "blogdetails");
   
    
     if (fd.Mandatory === 'x') {
@@ -115,6 +113,9 @@ async function createEditor(){
         /* global lottie */
         ClassicEditor
             .create( document.querySelector( '.editor' ) )
+            .then( editor => {
+                classicEditor = editor;       
+                        } )
             .catch( error => {
                 console.error( error );
             } );
@@ -123,13 +124,6 @@ async function createEditor(){
         console.error('Error loading Lottie:', error);
     }
 }
-
-
-
-
-
-
-
 
 function createLabel(fd) {
     const label = document.createElement('label');
