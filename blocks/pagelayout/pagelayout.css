@@ -58,14 +58,21 @@ font-style: normal;
     
 }
 
-.blog-card img{
-    width: 210px;
+.bloglist-item .blog-card .blog-body .blog-image{
+    width: 30%;
+    margin: 0 20px 0 0;
+}
+
+
+.blog-image img{
+    width: 100%;
     border: none;
     border-radius: 5px;
     margin:  0 20px 0 0;
 }
 
-.bloglist-item .blog-card .blog-body p{
+.bloglist-item .blog-card .blog-body .blog-details{
+    width: 70%;
     font-size: 15px;
     color: #111111;
     line-height: 1.6;

@@ -1,7 +1,7 @@
 .blog-details{
     min-height: 80vh;
     background-color: #fff;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 5px;
 }
 
@@ -21,5 +21,10 @@
 .blog-details .blog-article .banner-image{
     border: none;
     padding: 1rem 0;
+}
+
+.blog-details .blog-article .blog-text {
+    padding: 1rem;
+    color: var(--text-color);
 }
 
