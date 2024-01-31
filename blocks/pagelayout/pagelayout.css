@@ -28,7 +28,16 @@
     font-weight: 700;
     text-transform: capitalize;
     line-height: 1;
+    color: var(--header-text-color);
+    transition: all 0.1s ease;
 }
+
+.bloglist-item .blog-card  .blog-title:hover{
+cursor: pointer;
+color: var(--header-hover-color);
+text-decoration: none;
+}
+
 
 .bloglist-item .blog-card .blog-credit{
     font-size: 13px;
@@ -62,10 +71,22 @@ font-style: normal;
     line-height: 1.6;
 }
 
+.bloglist-item .read-more{
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+   color : var(--header-hover-color);
+}
+
+.bloglist-item .read-more:hover{
+    text-decoration: none;
+}
 /* sidebar starts here */
 .left-sidebar{
-    width: 30%;
-  
+    width: 30%;  
 }
 
 .left-sidebar table{

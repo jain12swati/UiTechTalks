@@ -1,0 +1,25 @@
+.blog-details{
+    min-height: 80vh;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.blog-details .blog-article h1{
+    font-size: 35px;
+    color: var(--text-color);
+}
+
+.blog-details .blog-article .credit{
+    font-size: 14px;
+}
+
+.blog-details .blog-article .credit span{
+    color: var(--btn-color);
+}
+
+.blog-details .blog-article .banner-image{
+    border: none;
+    padding: 1rem 0;
+}
+

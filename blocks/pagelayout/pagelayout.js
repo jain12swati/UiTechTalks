@@ -21,17 +21,18 @@ export default async function decorate(block) {
       const { data = [] } = await response.json();
       ul.classList.add("latestblog-list");
   
-      data.forEach((el, idx) => {         
+      data.forEach((el) => {         
         const li = document.createElement('li');
         li.classList.add("bloglist-item")
         li.innerHTML = `<div class="blog-card">
-                       <div class="blog-title">${el.title}</div>
+                       <div><a href="/blog-details?title=${el.title}"  class="blog-title">${el.title}</a></div>
                       <div class="blog-credit">by <span>${el.firstname} ${el.lastname}</span> ${el.date} </div>
                       <div class="blog-body">
                       <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                       <p class="blog-details">${el.blogdetails}</p>
+                      
                       </div>
-    
+                      <a href="/blog-details?title=${el.title}" class="read-more">Read More...</a>
                       </div>`;
   
         ul.append(li);
