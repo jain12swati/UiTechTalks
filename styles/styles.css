@@ -24,6 +24,7 @@
   --header-hover-color: #1E73BE; 
   --btn-color : #1E7ebe;
 
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
@@ -44,6 +45,9 @@
 
   /* nav height */
   --nav-height: 68px;
+
+  /**border radius */
+  --border-radius : 5px;
 }
 
 @font-face {
