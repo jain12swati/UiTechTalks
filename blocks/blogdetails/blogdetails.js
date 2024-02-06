@@ -18,7 +18,7 @@ export default async function decorate(block) {
 
    //    console.log("searchparam=", searchParamValue);
 
-    const apiUrl = "/blog-form.json?sheet=incoming";
+    const apiUrl = "/blog-form.json?sheet=blogs";
 
     /**blog details fetch call */
     try {

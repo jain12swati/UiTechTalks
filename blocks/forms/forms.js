@@ -33,7 +33,10 @@ function constructPayload(form) {
         }
     });
 
-    payload.blogdetails = classicEditor?.getData() || "";
+    if(classicEditor?.getData()){
+        payload.blogdetails = classicEditor?.getData()
+    }
+  //  payload.blogdetails = classicEditor?.getData() || "";
     console.log("paload in form", payload);
     return payload;
 }
