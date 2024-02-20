@@ -20,8 +20,9 @@ export default async function decorate(block) {
       const response = await fetch(blogUrl);
       const { data = [] } = await response.json();
       ul.classList.add("latestblog-list");
-  
-      data.forEach((el) => {         
+      console.log("data", data);
+      data.forEach((el) => { 
+        console.log("li", el);        
         const li = document.createElement('li');
         li.classList.add("bloglist-item")
         li.innerHTML = `<div class="blog-card">

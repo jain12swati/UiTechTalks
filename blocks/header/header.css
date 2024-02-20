@@ -15,9 +15,10 @@ header nav {
   align-items: center;
   gap: 0 2em;
   margin: auto;
+  min-width: 85%;
   max-width: 1264px;
   height: var(--nav-height);
-  padding: 0 1rem;
+  
   font-family: var(--body-font-family);
 }
 
@@ -168,7 +169,7 @@ header nav .nav-sections {
 }
 
 header nav[aria-expanded="true"] .nav-sections {
-  display: block;
+  display: flex;
   visibility: visible;
   align-self: start;
 }
@@ -276,9 +277,14 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
+  header nav .nav-sections .search-wrapper{
+    margin: 0;
+  }
+
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
 }
+
