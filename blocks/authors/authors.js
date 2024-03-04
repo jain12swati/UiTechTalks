@@ -13,11 +13,18 @@ export default async function decorate(block) {
     data.forEach(el => {
       const li = document.createElement('li');
       li.classList.add("author-list-item")
-      li.innerHTML = `<div class="author-picture"><img src=${el.profilepic}></div>
+      li.innerHTML = `<div class="author-card">
+        <a href="">
+        <div class="author-picture"><img src=${el.profilepic}></div>
         <div class="author-name">${el.name}</div>
-        <div class="author-profile"></div>
+        <div class="author-profile">
+        ${el.designation}
+        ${el.skills}
+        </div>
         <div class="social-profile">
        
+        </div>
+        </a>
         </div>`;
 
       ul.append(li);
