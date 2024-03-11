@@ -71,10 +71,10 @@ function createButton(fd) {
             if (fd.Placeholder) form.dataset.action = fd.Placeholder;
             if (form.checkValidity()) {
                 event.preventDefault();
-               // button.setAttribute('disabled', '');
+               button.setAttribute('disabled', '');
                 await submitForm(form);
-               /*  const redirectTo = fd.Extra;
-                window.location.href = redirectTo; */
+                 const redirectTo = fd.Extra;
+                window.location.href = redirectTo; 
             }
         });
     }

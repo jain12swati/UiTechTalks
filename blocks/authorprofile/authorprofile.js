@@ -102,6 +102,7 @@ export default async function decorate(block) {
 
     }
 
+
      //api call for fetching inhouse blogs 
 
      const blogUrl = contentBlock.querySelector("a").href;   
