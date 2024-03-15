@@ -147,17 +147,24 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 /* brand */
 header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
+  grid-area: brand;  
   font-size: var(--heading-font-size-s);
+  color: #ff0000;
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  max-width:  50px;
   height: auto;
+  margin : 0px 30px 0px 0px;
 }
+
+.nav-brand .default-content-wrapper p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
 
 /* sections */
 header nav .nav-sections {
