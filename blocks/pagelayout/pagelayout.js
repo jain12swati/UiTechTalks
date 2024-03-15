@@ -97,7 +97,7 @@ export default async function decorate(block) {
       } finally {
         hideLoader();
       }
-    }, 2000);
+    }, 1000);
 
   };
 
