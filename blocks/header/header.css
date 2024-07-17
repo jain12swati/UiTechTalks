@@ -57,11 +57,20 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  padding: 15px 18px;
 }
 
 header nav a:hover{
-  color : var(--header-hover-color);
+  color : white;
   text-decoration: none;
+  background-color: var(--header-hover-color);
+  
+}
+
+.aaactive{
+  color : white;
+  text-decoration: none;
+  background-color: var(--header-hover-color);
 }
 
 /* hamburger */
@@ -295,3 +304,12 @@ header nav .nav-tools {
   grid-area: tools;
 }
 
+.activemenu a{
+  color : white;
+  text-decoration: none;
+  background-color: var(--header-hover-color);
+}
+
+header nav .nav-sections ul > li.activemenu {
+  color: white;
+}

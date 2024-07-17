@@ -145,4 +145,13 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  const menuItems = document.querySelectorAll('.nav-sections ul li');
+  menuItems.forEach((menuitem, id) => {
+    const link = menuitem.querySelector('a');
+    if (link && link.pathname === window.location.pathname) {     
+        menuitem.classList.add('activemenu');
+     
+    }
+  });
 }

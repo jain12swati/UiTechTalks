@@ -1,6 +1,6 @@
 export default async function decorate(block) {
   const columns = block.querySelector("div > div");
-  console.log(columns)
+ // console.log(columns)
   columns.classList.add("blog-page");
   const [contentBlock, sidebar] = columns.querySelectorAll("div");
   contentBlock.classList.add("blog-container");
@@ -11,7 +11,7 @@ export default async function decorate(block) {
   loader.innerHTML = `<div></div>
                       <div></div>
                       <div></div>`;
-  console.log("loader", loader)
+  //console.log("loader", loader)
 
 
   const sidebarContent = sidebar.querySelectorAll("table");
@@ -45,7 +45,7 @@ export default async function decorate(block) {
     if (!response.ok) {
       throw new Error(`An error occurred: ${response.status}`);
     }
-    console.log("a", response)
+   // console.log("a", response)
     return await response.json();
 
   }
@@ -60,7 +60,7 @@ export default async function decorate(block) {
       li.classList.add("bloglist-item")
       li.innerHTML = `<div class="blog-card">
                              <div><a href="/blog-details?title=${el.title}"  class="blog-title">${el.title}</a></div>
-                            <div class="blog-credit">by <span>${el.firstname} ${el.lastname}</span> ${el.timestamp != 0 ? el.timestamp : ''} </div>
+                            <div class="blog-credit">By <span><a href='/authorprofile?name=${el.firstname}%20${el.lastname}'>${el.firstname} ${el.lastname}</a></span> ${el.timestamp != 0 ? el.timestamp : ''} </div>
                             <div class="blog-body">
                              <div class="blog-image">
                              <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">

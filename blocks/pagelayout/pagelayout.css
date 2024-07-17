@@ -44,11 +44,12 @@ text-decoration: none;
     margin: 13px 0 0;
 }
 
-.bloglist-item .blog-card .blog-credit span{
+.bloglist-item .blog-card .blog-credit span a{
 text-transform: capitalize;
 color: var(--header-hover-color);
 font-weight: 500;
 font-style: normal;
+text-decoration: none;
 }
 
 .bloglist-item .blog-card .blog-body{
@@ -166,6 +167,11 @@ font-style: normal;
     font-size: 18px;
     color: #111111;
     font-weight:700;
+}
+
+
+.left-sidebar .table-1{
+    display: none;
 }
 
 .left-sidebar .table-4 ul{

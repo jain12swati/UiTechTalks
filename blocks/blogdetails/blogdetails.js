@@ -18,6 +18,8 @@ export default async function decorate(block) {
 
    //    console.log("searchparam=", searchParamValue);
 
+ 
+
     const apiUrl = "/blog-form.json?sheet=blogs";
 
     /**blog details fetch call */
@@ -33,7 +35,10 @@ export default async function decorate(block) {
            blogArticle.classList.add("blog-article");
            blogArticle.innerHTML = `<h1>${element.title}</h1>
                                     <div class="credit">
-                                        by <span>${element.firstname} ${element.lastname}</span>
+                                        By 
+                                        <span><a href='/authorprofile?name=${element.firstname}%20${element.lastname}'>
+                                        ${element.firstname} ${element.lastname}
+                                        </a></span>
                                         date
                                     </div>
                                     
@@ -42,7 +47,7 @@ export default async function decorate(block) {
                                     </div>
                     `;
            blogWrapper.innerHTML = "";
-    blogWrapper.append(blogArticle);
+            blogWrapper.append(blogArticle);
         }
        
        });

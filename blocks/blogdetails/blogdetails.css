@@ -14,8 +14,10 @@
     font-size: 14px;
 }
 
-.blog-details .blog-article .credit span{
+.blog-details .blog-article .credit span a{
     color: var(--btn-color);
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
 .blog-details .blog-article .banner-image{
